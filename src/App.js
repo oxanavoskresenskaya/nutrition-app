@@ -82,8 +82,8 @@ useEffect(()=>{
       </form>
       <div className='container-response'>
         {myNutrition && <p className='calories'><b>{myNutrition.calories} kcal</b></p>}
-        {myNutrition && Object.values(myNutrition.totalNutrients).map(({label, quantity, unit})=>
-        <Nutrition label={label} quantity={quantity} unit={unit} />
+        {myNutrition && Object.values(myNutrition.totalNutrients).map(({label, quantity, unit}, index)=>
+        <Nutrition key={index} label={label} quantity={quantity} unit={unit} />
         )}
       </div>
     </div>
